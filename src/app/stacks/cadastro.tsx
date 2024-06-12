@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View,} from 'react-native';
 
 export default function Cadastro() {
-    return(
+
+    return (
         <View style={styles.container}>
-            <Text>Página de Cadastro</Text>
-            </View>
+            <Text style={styles.title}>Página de Cadastro</Text>
+            
+        </View>
     );
 }
 
@@ -14,5 +16,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    title: {
+        fontSize: 24,
+        marginBottom: 20,
     },
 });

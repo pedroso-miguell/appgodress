@@ -1,15 +1,30 @@
-import { StyleSheet, Text, View, Button } from 'react-native';
-import { Link, router } from 'expo-router'
+import { StyleSheet, Text, View, Button, Image } from 'react-native';
+import { useRouter } from 'expo-router';
 
-export default function Home() {
-    function handleNavigate() {
-        router.replace("/dashboard")
+const Logo = require('./imgs/Spash.png');
+
+
+export default function Inicial() {
+    const router = useRouter();
+
+    function BtnInicial() {
+        router.push('/stacks/inicial');
     }
+
+    function BtnHome() {
+        router.push('/tabs/home');
+    }
+
     return (
         <View style={styles.container}>
-            <Text>Página Home</Text>
-            <Link href={"/cadastro"}>Ir para outra página</Link>
-            <Button title="Navegar para o painel" onPress={handleNavigate} />
+            <Text style={styles.title}>Tela Spash</Text>
+            <Image source={Logo} style={styles.logo} />
+            <View style={styles.buttonContainer}>
+                <Button title="Ir para Página Inicial" onPress={BtnInicial} color="#593C9D"/>
+            </View>
+            <View style={styles.buttonContainer}>
+                <Button title="Ir para Home" onPress={BtnHome} color="#593C9D"/>
+            </View>
         </View>
     );
 }
@@ -17,8 +32,22 @@ export default function Home() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#593C9D',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    title: {
+        fontSize: 24,
+        marginBottom: 20,
+        color:'white',
+    },
+    logo: {
+        width: 220, 
+        height: 180, 
+        borderRadius: 10,
+        marginBottom: 20, 
+    },
+    buttonContainer: {
+        marginVertical: 10,
     },
 });

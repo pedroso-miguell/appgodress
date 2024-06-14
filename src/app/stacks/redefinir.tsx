@@ -1,46 +1,38 @@
-import {StyleSheet, Text, View, TouchableOpacity, Image, TextInput} from "react-native";
+import {StyleSheet, Text, View, TouchableOpacity, Image, TextInput,} from "react-native";
 import { Link, useRouter } from "expo-router";
 
-export default function Login() {
+export default function Redefinir() {
   const router = useRouter();
 
-  function BtnLogin() {
-    router.push("/stacks/login");
+  function BtnEnviar() {
+    router.push("/stacks/redefinir");
   }
 
   return (
     <View style={styles.container}>
       <View style={styles.introducao}>
-        <Text style={styles.descricao}>Faça Login</Text>
+        <Text style={styles.redefinir}>Redefinir Sua</Text>
+        <Text style={styles.redefinir2}>Senha</Text>
       </View>
 
       <Image source={require("../imgs/Gzao.svg")} style={styles.logo} />
       <View style={styles.info}>
         <TextInput
           style={styles.input}
-          placeholder="Email"
-          keyboardType="email-address"
-          autoComplete="email"
-          autoCapitalize="none"
+          placeholder="Digite aqui"
+          placeholderTextColor="gray"
         />
 
-        <TextInput
-          style={styles.input}
-          placeholder="Senha"
-          autoCapitalize="none"
-          secureTextEntry
-        />
+        <Text style={styles.texto}>
+          Você IRÁ RECEBER um e-mail no endereço informado acima {"\n"}
+          contendo o procedimento para criar uma nova senha para esse usúario
+        </Text>
 
-      
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.buttonEntrar} onPress={BtnLogin}>
-            <Text style={styles.TxtBtnEntrar}>Entrar</Text>
+          <TouchableOpacity style={styles.buttonEntrar} onPress={BtnEnviar}>
+            <Text style={styles.TxtBtnEntrar}>Enviar</Text>
           </TouchableOpacity>
-
-          <Link href="/stacks/redefinir" style={styles.link}>
-            Esqueceu a Senha
-          </Link>
-          </View>
+        </View>
       </View>
     </View>
   );
@@ -52,7 +44,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   introducao: {
-    marginLeft: 20,
+    marginLeft: 10,
     marginTop: "50%",
   },
   logo: {
@@ -60,7 +52,7 @@ const styles = StyleSheet.create({
     height: 100,
     marginBottom: 20,
     marginLeft: "70%",
-    marginTop: "50%",
+    marginTop: "55%",
     position: "absolute",
   },
   input: {
@@ -72,22 +64,25 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     width: "90%",
     height: 50,
-    marginTop: 10,
   },
   info: {
     alignItems: "center",
     justifyContent: "center",
-    marginTop: "45%",
+    marginTop: "35%",
   },
-  descricao: {
+  redefinir: {
     fontSize: 40,
     marginBottom: 10,
     marginTop: "5%",
   },
+  redefinir2: {
+    fontSize: 40,
+    marginBottom: 10,
+  },
   buttonContainer: {
     width: "80%",
     alignItems: "center",
-    marginTop: 10,
+    marginTop: "25%",
   },
   buttonEntrar: {
     width: "100%",
@@ -102,8 +97,8 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 20,
   },
-  link: {
-    fontSize: 18,
+  texto: {
+    fontSize: 10,
     color: "gray",
     marginTop: 10,
   },

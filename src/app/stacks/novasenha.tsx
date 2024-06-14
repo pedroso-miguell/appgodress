@@ -1,46 +1,38 @@
-import {StyleSheet, Text, View, TouchableOpacity, Image, TextInput} from "react-native";
+import {StyleSheet, Text, View, TouchableOpacity, Image, TextInput,} from "react-native";
 import { Link, useRouter } from "expo-router";
 
-export default function Login() {
+export default function NovaSenha() {
   const router = useRouter();
 
-  function BtnLogin() {
-    router.push("/stacks/login");
+  function BtnRedefinir() {
+    router.push("/stacks/inicial");
   }
 
   return (
     <View style={styles.container}>
       <View style={styles.introducao}>
-        <Text style={styles.descricao}>Faça Login</Text>
+        <Text style={styles.novasenha}>Nova Senha</Text>
       </View>
 
       <Image source={require("../imgs/Gzao.svg")} style={styles.logo} />
       <View style={styles.info}>
         <TextInput
           style={styles.input}
-          placeholder="Email"
-          keyboardType="email-address"
-          autoComplete="email"
-          autoCapitalize="none"
+          placeholder="Nova senha"
+          placeholderTextColor="gray"
         />
 
         <TextInput
           style={styles.input}
-          placeholder="Senha"
-          autoCapitalize="none"
-          secureTextEntry
+          placeholder="Confirmar Senha"
+          placeholderTextColor="gray"
         />
 
-      
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.buttonEntrar} onPress={BtnLogin}>
-            <Text style={styles.TxtBtnEntrar}>Entrar</Text>
+          <TouchableOpacity style={styles.buttonEntrar} onPress={BtnRedefinir}>
+            <Text style={styles.TxtBtnEntrar}>Redefinir</Text>
           </TouchableOpacity>
-
-          <Link href="/stacks/redefinir" style={styles.link}>
-            Esqueceu a Senha
-          </Link>
-          </View>
+        </View>
       </View>
     </View>
   );
@@ -60,10 +52,11 @@ const styles = StyleSheet.create({
     height: 100,
     marginBottom: 20,
     marginLeft: "70%",
-    marginTop: "50%",
+    marginTop: "48%",
     position: "absolute",
   },
   input: {
+    marginTop: 10,
     borderColor: "black",
     color: "black",
     backgroundColor: "lightgray",
@@ -72,14 +65,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     width: "90%",
     height: 50,
-    marginTop: 10,
   },
   info: {
     alignItems: "center",
     justifyContent: "center",
-    marginTop: "45%",
+    marginTop: "35%",
   },
-  descricao: {
+  novasenha: {
     fontSize: 40,
     marginBottom: 10,
     marginTop: "5%",
@@ -87,7 +79,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     width: "80%",
     alignItems: "center",
-    marginTop: 10,
+    marginTop: "25%",
   },
   buttonEntrar: {
     width: "100%",
@@ -102,8 +94,8 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 20,
   },
-  link: {
-    fontSize: 18,
+  texto: {
+    fontSize: 10,
     color: "gray",
     marginTop: 10,
   },

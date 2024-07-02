@@ -25,7 +25,7 @@ export default function Cadastro() {
     }
   }
 
-  function handleGenderSelection(selectedGender: string) {
+  function handleGenderSelection(selectedGender) {
     setGender(selectedGender);
   }
 

@@ -1,52 +1,59 @@
-import {StyleSheet, Text, View, TouchableOpacity, Image, TextInput,} from "react-native";
+import {StyleSheet,Text,View,TouchableOpacity,Image,TextInput,ScrollView,} from "react-native";
 import { useRouter } from "expo-router";
-import { Ionicons, AntDesign, MaterialIcons, Fontisto} from '@expo/vector-icons';
+import {MaterialIcons} from "@expo/vector-icons";
 
 export default function Codigo() {
   const router = useRouter();
 
   function BtnEnviar() {
-    router.push("/stacks/redefinir");
+    router.push("/stacks/novasenha");
   }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.introducao}>
-        <Text style={styles.redefinir}>Coloque o</Text>
-        <Text style={styles.redefinir2}>código enviado</Text>
-        <Text style={styles.redefinir3}>em seu email</Text>
-      </View>
+    <ScrollView contentContainerStyle={styles.scrollContainer}>
+      <View style={styles.container}>
+        <View style={styles.introducao}>
+          <Text style={styles.redefinir}>Coloque o</Text>
+          <Text style={styles.redefinir2}>código enviado</Text>
+          <Text style={styles.redefinir3}>em seu email</Text>
+        </View>
 
-      <Image source={require("../imgs/Gzao.svg")} style={styles.logo} />
-      <View style={styles.info}>
-      <MaterialIcons name="system-security-update-good" size={90} color="black" />
+        <Image source={require("../imgs/Gzao.png")} style={styles.logo} />
+        <View style={styles.info}>
+          <MaterialIcons
+            name="system-security-update-good"
+            size={90}
+            color="black"
+          />
 
-      <Text style={styles.texto}>
-        Um código de 6 dígitos foi enviado para
-        seu e-mail (...)
-        </Text>
+          <Text style={styles.texto}>
+            Um código de 6 dígitos foi enviado para seu e-mail (...)
+          </Text>
 
-        <TextInput
-          style={styles.input}
-          placeholder="Insira o código"
-          numberOfLines={50}
-          placeholderTextColor="gray"
-        />
+          <TextInput
+            style={styles.input}
+            placeholder="Insira o código"
+            numberOfLines={50}
+            placeholderTextColor="gray"
+          />
 
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.buttonEntrar} onPress={BtnEnviar}>
-            <Text style={styles.TxtBtnEntrar}>Enviar</Text>
-          </TouchableOpacity>
-        <Text style={styles.reenviar}>
-       Reenviar Código
-        </Text>
+          <Text style={styles.reenviar}>Reenviar Código</Text>
+
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity style={styles.buttonEnviar} onPress={BtnEnviar}>
+              <Text style={styles.TxtBtnEnviar}>Enviar</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  scrollContainer: {
+    flexGrow: 1,
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
@@ -57,9 +64,9 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: 80,
-    height: 80,
+    height: 93,
     marginBottom: 20,
-    marginLeft: "78%",
+    marginLeft: "75%",
     marginTop: "45%",
     position: "absolute",
   },
@@ -80,33 +87,32 @@ const styles = StyleSheet.create({
     marginTop: "35%",
   },
   redefinir: {
-    fontSize: 40,
+    fontSize: 35,
     marginBottom: 10,
     marginTop: "5%",
   },
   redefinir2: {
-    fontSize: 40,
+    fontSize: 35,
     marginBottom: 10,
   },
   redefinir3: {
-    fontSize: 40,
+    fontSize: 35,
     marginBottom: 10,
   },
   buttonContainer: {
     width: "80%",
     alignItems: "center",
-    marginTop: "25%",
+    marginTop: "10%",
   },
-  buttonEntrar: {
+  buttonEnviar: {
     width: "100%",
     backgroundColor: "#593C9D",
     paddingVertical: 10,
     paddingHorizontal: 10,
     borderRadius: 10,
     alignItems: "center",
-    marginBottom: 10,
   },
-  TxtBtnEntrar: {
+  TxtBtnEnviar: {
     color: "white",
     fontSize: 20,
   },
@@ -119,6 +125,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "gray",
     marginTop: 10,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });

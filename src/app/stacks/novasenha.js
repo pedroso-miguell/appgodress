@@ -1,11 +1,18 @@
-import {StyleSheet, Text, View, TouchableOpacity, Image, TextInput,} from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  TextInput,
+} from "react-native";
 import { Link, useRouter } from "expo-router";
 
 export default function NovaSenha() {
   const router = useRouter();
 
   function BtnRedefinir() {
-    router.push("/stacks/inicial");
+    router.push("/stacks/login");
   }
 
   return (
@@ -14,7 +21,8 @@ export default function NovaSenha() {
         <Text style={styles.novasenha}>Nova Senha</Text>
       </View>
 
-      <Image source={require("../imgs/Gzao.svg")} style={styles.logo} />
+      <Image source={require("../imgs/Gzao.png")} style={styles.logo} />
+
       <View style={styles.info}>
         <TextInput
           style={styles.input}
@@ -29,8 +37,8 @@ export default function NovaSenha() {
         />
 
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.buttonEntrar} onPress={BtnRedefinir}>
-            <Text style={styles.TxtBtnEntrar}>Redefinir</Text>
+          <TouchableOpacity style={styles.buttonRedefinir} onPress={BtnRedefinir}>
+            <Text style={styles.TxtBtnRedefinir}>Redefinir</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -48,8 +56,8 @@ const styles = StyleSheet.create({
     marginTop: "50%",
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 93,
     marginBottom: 20,
     marginLeft: "70%",
     marginTop: "48%",
@@ -81,7 +89,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: "25%",
   },
-  buttonEntrar: {
+  buttonRedefinir: {
     width: "100%",
     backgroundColor: "#593C9D",
     paddingVertical: 10,
@@ -90,7 +98,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 10,
   },
-  TxtBtnEntrar: {
+  TxtBtnRedefinir: {
     color: "white",
     fontSize: 20,
   },

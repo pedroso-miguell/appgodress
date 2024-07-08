@@ -1,53 +1,106 @@
-import { StyleSheet, Text, View, Button, Image } from 'react-native';
-import { useRouter } from 'expo-router';
-
-const Logo = require('./imgs/Spash.png');
+import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
+import { useRouter } from "expo-router";
 
 
 export default function Inicial() {
-    const router = useRouter();
+  const router = useRouter();
 
-    function BtnInicial() {
-        router.push('/stacks/inicial');
-    }
+  function BtnLogin() {
+    router.push("/stacks/login");
+  }
 
-    function BtnHome() {
-        router.push('/tabs/home');
-    }
+  function BtnCadastro() {
+    router.push("/stacks/cadastro");
+  }
 
-    return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Tela Spash</Text>
-            <Image source={Logo} style={styles.logo} />
-            <View style={styles.buttonContainer}>
-                <Button title="Ir para Página Inicial" onPress={BtnInicial} color="#593C9D"/>
-            </View>
-            <View style={styles.buttonContainer}>
-                <Button title="Ir para Home" onPress={BtnHome} color="#593C9D"/>
-            </View>
-        </View>
-    );
+  return (
+    <View style={styles.container}>
+
+    <View style={styles.introducao}>
+      <Text style={styles.title}>Olá!</Text>
+      <Text style={styles.descricao}>Bem-vindo a GoDress</Text>
+      </View>
+
+      <Image
+      source={require('./imgs/Gzao.png')}
+      style={styles.logo}
+    />
+      
+      <View style={styles.botoes}>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.buttonLogin} onPress={BtnLogin}>
+          <Text style={styles.TxtBtnLogin}>Faça Login</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.buttonCadastro} onPress={BtnCadastro}>
+          <Text style={styles.TxtBtnCadastro}>Cadastre-se</Text>
+        </TouchableOpacity>
+      </View>
+      </View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#593C9D',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    title: {
-        fontSize: 24,
-        marginBottom: 20,
-        color:'white',
-    },
-    logo: {
-        width: 220, 
-        height: 180, 
-        borderRadius: 10,
-        marginBottom: 20, 
-    },
-    buttonContainer: {
-        marginVertical: 10,
-    },
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
+  introducao: {
+    marginLeft:20,
+    marginTop: '50%',
+  },
+  botoes: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: '45%',
+  },
+  logo: {
+    width: 80, 
+    height: 93, 
+    marginBottom: 20,
+    marginLeft: '70%',
+    marginTop: '50%',
+    position: 'absolute'
+  },
+  title: {
+    fontSize: 60,
+    fontWeight: "bold",
+  },
+  descricao: {
+    fontSize: 18,
+    marginBottom: 10,
+    color: "gray",
+  },
+  buttonContainer: {
+    width: "80%",
+    alignItems: "center",
+    marginTop: 10,
+  },
+  buttonLogin: {
+    width: "100%",
+    backgroundColor: "#593C9D",
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  TxtBtnLogin: {
+    color: "white",
+    fontSize: 20,
+  },
+  buttonCadastro: {
+    width: "100%",
+    backgroundColor: "#593C9D",
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  TxtBtnCadastro: {
+    color: "white",
+    fontSize: 20,
+  },
+
 });

@@ -5,7 +5,7 @@ export default function Redefinir() {
   const router = useRouter();
 
   function BtnEnviar() {
-    router.push("/stacks/redefinir");
+    router.push("/stacks/codigo");
   }
 
   return (
@@ -15,7 +15,11 @@ export default function Redefinir() {
         <Text style={styles.redefinir2}>Senha</Text>
       </View>
 
-      <Image source={require("../imgs/Gzao.svg")} style={styles.logo} />
+      <Image
+      source={require('../imgs/Gzao.png')}
+      style={styles.logo}
+    />
+
       <View style={styles.info}>
         <TextInput
           style={styles.input}
@@ -29,8 +33,8 @@ export default function Redefinir() {
         </Text>
 
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.buttonEntrar} onPress={BtnEnviar}>
-            <Text style={styles.TxtBtnEntrar}>Enviar</Text>
+          <TouchableOpacity style={styles.buttonEnviar} onPress={BtnEnviar}>
+            <Text style={styles.TxtBtnEnviar}>Enviar</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -48,10 +52,10 @@ const styles = StyleSheet.create({
     marginTop: "50%",
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 93,
     marginBottom: 20,
-    marginLeft: "70%",
+    marginLeft: "75%",
     marginTop: "55%",
     position: "absolute",
   },
@@ -72,19 +76,20 @@ const styles = StyleSheet.create({
   },
   redefinir: {
     fontSize: 40,
-    marginBottom: 10,
+    marginBottom: 5,
     marginTop: "5%",
   },
   redefinir2: {
     fontSize: 40,
-    marginBottom: 10,
+    marginBottom: 5,
+    marginLeft: "20%",
   },
   buttonContainer: {
     width: "80%",
     alignItems: "center",
     marginTop: "25%",
   },
-  buttonEntrar: {
+  buttonEnviar: {
     width: "100%",
     backgroundColor: "#593C9D",
     paddingVertical: 10,
@@ -93,7 +98,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 10,
   },
-  TxtBtnEntrar: {
+  TxtBtnEnviar: {
     color: "white",
     fontSize: 20,
   },

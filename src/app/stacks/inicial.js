@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import { useRouter } from "expo-router";
 
+
 export default function Inicial() {
   const router = useRouter();
 
@@ -20,8 +21,10 @@ export default function Inicial() {
       <Text style={styles.descricao}>Bem-vindo a GoDress</Text>
       </View>
 
-      <Image source={require('../imgs/Gzao.svg')} style={styles.logo}/>
-
+      <Image
+      source={require('../imgs/Gzao.png')}
+      style={styles.logo}
+    />
       
       <View style={styles.botoes}>
       <View style={styles.buttonContainer}>
@@ -53,8 +56,8 @@ const styles = StyleSheet.create({
     marginTop: '45%',
   },
   logo: {
-    width: 100, 
-    height: 100, 
+    width: 80, 
+    height: 93, 
     marginBottom: 20,
     marginLeft: '70%',
     marginTop: '50%',

@@ -1,28 +1,29 @@
 {
   "expo": {
     "name": "GoDress",
+    "entryPoint": "app/inicial.js",
     "slug": "GoDress",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/Logo.png",
+    "icon": "./src/assets/Logo.png",
     "userInterfaceStyle": "light",
     "scheme": "GoDress",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#fff"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/splash.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./src/assets/splash.png",
+        "backgroundColor": "#fff"
       }
     },
     "web": {
-      "favicon": "./src/app/imgs/Logo.png"
+      "favicon": "./src/assets/Logo.png"
     },
     "plugins": [
       "expo-router"

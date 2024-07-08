@@ -5,7 +5,7 @@ export default function Login() {
   const router = useRouter();
 
   function BtnLogin() {
-    router.push("/stacks/login");
+    router.push("/tabs/home");
   }
 
   return (
@@ -14,7 +14,12 @@ export default function Login() {
         <Text style={styles.descricao}>Faça Login</Text>
       </View>
 
-      <Image source={require("../imgs/Gzao.svg")} style={styles.logo} />
+      <Image
+      source={require('../imgs/Gzao.png')}
+      style={styles.logo}
+    />
+
+     
       <View style={styles.info}>
         <TextInput
           style={styles.input}
@@ -56,8 +61,8 @@ const styles = StyleSheet.create({
     marginTop: "50%",
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 80,
+    height: 93,
     marginBottom: 20,
     marginLeft: "70%",
     marginTop: "50%",

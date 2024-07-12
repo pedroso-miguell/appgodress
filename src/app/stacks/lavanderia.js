@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useRouter } from 'expo-router';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+import { useRouter } from 'expo-router';
 
-// Defina as cenas para cada aba (mantido o mesmo código anterior)
+// Defina as cenas para cada aba
 const TudoRoute = () => (
     <View style={styles.scene}>
         <Text>Conteúdo "Tudo"</Text>
@@ -88,34 +87,12 @@ export default function Home() {
                     />
                 }
             />
-            {/* Ícone de máquina de lavar */}
-            <TouchableOpacity
-                style={styles.iconContainer}
-                onPress={() => router.push('/stacks/lavanderia')}
-            >
-                <Icon name="washing-machine" size={30} color="white" />
-            </TouchableOpacity>
-
-            {/* Ícone de escanear */}
-            <TouchableOpacity
-                style={[styles.iconContainer, { bottom: 80 }]} // Ajuste a posição conforme necessário
-                onPress={() => {
-                    // Adicione a navegação para a tela de escanear aqui
-                }}
-            >
-                <Icon name="scan-helper" size={30} color="white" />
-            </TouchableOpacity>
+            
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    separator: {
-        borderBottomColor: '#000',
-        borderBottomWidth: 1,
-        marginBottom: 10,
-        paddingTop: '5%',
-    },
     scene: {
         flex: 1,
         alignItems: 'center',
@@ -141,7 +118,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 20,
         right: 20,
-        backgroundColor: '#593C9D',
         borderRadius: 50,
         padding: 10,
         elevation: 5, // Adiciona sombra no Android
